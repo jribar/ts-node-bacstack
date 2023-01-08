@@ -11,7 +11,7 @@
   "scripts": {
     "changelog": "commitlint --from=origin/master",
     "build": "tsc",
-    "lint": "eslint lib/**/*.ts test/**/*.ts index.ts",
+    "lint": "eslint source/**/*.*",
     "lint:fix": "eslint --fix \"source/**/*\"",
     "test": "yarn test:types && yarn test:ts",
     "test:ts": "npx jest -c jest.config.ts --coverageDirectory reports/coverage-test source/test/unit/*.spec.ts",
