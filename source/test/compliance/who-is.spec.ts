@@ -28,7 +28,7 @@ describe('bacstack - whoIs compliance', () => {
       next();
     });
 
-    externalClient.on('whoIs', (device) => {
+    externalClient.on('whoIs', () => {
       externalClient.iAmResponse(1234, baEnum.Segmentation.NO_SEGMENTATION, 260);
     });
 
@@ -41,7 +41,7 @@ describe('bacstack - whoIs compliance', () => {
       next();
     });
 
-    externalClient.on('whoIs', (device) => {
+    externalClient.on('whoIs', () => {
       externalClient.iAmResponse(1234, baEnum.Segmentation.NO_SEGMENTATION, 260);
     });
 
@@ -54,7 +54,7 @@ describe('bacstack - whoIs compliance', () => {
       next();
     });
 
-    externalClient.on('whoIs', (device) => {
+    externalClient.on('whoIs', () => {
       externalClient.iAmResponse(1234, baEnum.Segmentation.NO_SEGMENTATION, 260);
     });
 

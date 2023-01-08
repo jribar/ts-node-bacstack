@@ -1,7 +1,5 @@
 'use strict';
 
-import {describe, expect, it} from '@jest/globals';
-
 import {EventEmitter} from 'events';
 import {Client} from '../../lib/client';
 
