@@ -48,7 +48,7 @@ export class Client extends EventEmitter {
   private _lastSequenceNumber = 0;
   private _segmentStore: any[] = [];
 
-  constructor(options: any) {
+  constructor(options?: any) {
     super();
 
     options = options || {};

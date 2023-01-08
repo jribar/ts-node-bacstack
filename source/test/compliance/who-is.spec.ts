@@ -7,18 +7,31 @@ import * as baEnum from '../../lib/enum';
 
 describe('bacstack - whoIs compliance', () => {
   let client: Client;
+  let externalClient: Client;
 
-  beforeEach(() => client = new Client({apduTimeout: 1000}));
-  afterEach(() => client.close());
+  beforeEach(() => {
+    client = new Client();
+    externalClient = new Client();
+  });
+
+  afterEach(() => {
+    client.close();
+    externalClient.close();
+  });
 
   it('should find the device simulator', (next) => {
     client.on('iAm', (device) => {
       expect(device.deviceId).toEqual(1234);
-      expect(device.maxApdu).toEqual(1476);
+      expect(device.maxApdu).toEqual(1482);
       expect(device.segmentation).toEqual(baEnum.Segmentation.NO_SEGMENTATION);
       expect(device.vendorId).toEqual(260);
       next();
     });
+
+    externalClient.on('whoIs', (device) => {
+      externalClient.iAmResponse(1234, baEnum.Segmentation.NO_SEGMENTATION, 260);
+    });
+
     client.whoIs();
   });
 
@@ -27,6 +40,11 @@ describe('bacstack - whoIs compliance', () => {
       expect(device.deviceId).toEqual(1234);
       next();
     });
+
+    externalClient.on('whoIs', (device) => {
+      externalClient.iAmResponse(1234, baEnum.Segmentation.NO_SEGMENTATION, 260);
+    });
+
     client.whoIs({lowLimit: 1233});
   });
 
@@ -35,6 +53,11 @@ describe('bacstack - whoIs compliance', () => {
       expect(device.deviceId).toEqual(1234);
       next();
     });
-    client.whoIs({lowLimit: 1233, highLimit: 1235, address: 'bacnet-device'});
+
+    externalClient.on('whoIs', (device) => {
+      externalClient.iAmResponse(1234, baEnum.Segmentation.NO_SEGMENTATION, 260);
+    });
+
+    client.whoIs({lowLimit: 1233, highLimit: 1235});
   });
 });
