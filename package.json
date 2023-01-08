@@ -1,8 +1,12 @@
 {
-  "name": "bacstack",
-  "version": "0.0.1-beta.14",
-  "description": "A BACnet protocol stack written in pure JavaScript.",
+  "name": "@plus4nodered/ts-bacstack",
+  "version": "0.1.0-beta.1",
+  "description": "A BACnet® protocol stack written in pure TypeScript.",
   "main": "index.js",
+  "dependencies": {
+    "debug": "^4.3.1",
+    "iconv-lite": "^0.6.3"
+  },
   "scripts": {
     "changelog": "commitlint --from=origin/master",
     "build": "tsc",
@@ -10,24 +14,38 @@
     "test": "jest --coverageDirectory reports/coverage-test test/unit/*.spec.ts",
     "integration": "jest --coverageDirectory reports/coverage-integration test/integration/*.spec.ts",
     "compliance": "jest --coverageDirectory reports/coverage-compliance test/compliance/*.spec.ts",
-    "docs": "typedoc --out docs --entryPoint '\"client\"' --excludeExternals --excludeNotExported --excludePrivate lib/client.ts"
+    "docs": "typedoc --out docs --entryPoint '\"client\"' --excludeExternals --excludeNotExported --excludePrivate lib/client.ts",
+    "dev-link": "yarn && yarn build && yarn link",
+    "dev-unlink": "yarn unlink @plus4nodered/ts-bacstack -g",
+    "code:check": "standard --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fh1ch/node-bacstack.git"
+    "url": "git+https://github.com/HILA-TECH/ts-node-bacstack.git"
   },
   "keywords": [
+    "plus4nodered",
     "bacnet",
     "bacstack",
     "building",
     "automation"
   ],
   "author": {
-    "name": "Fabio Huser",
-    "email": "fabio@fh1.ch"
+    "name": "PLUS for Node-RED",
+    "email": "developers@plus4nodered.com"
   },
+  "contributors": [
+    {
+      "name": "Fabio Huser",
+      "email": "fabio@fh1.ch"
+    },
+    {
+      "name": "Klaus Landsdorf",
+      "email": "kl@iniationware.com"
+    }
+  ],
   "engines": {
-    "node": ">= 12.0.0"
+    "node": ">= 16"
   },
   "jest": {
     "preset": "ts-jest",
@@ -47,14 +65,10 @@
       "@commitlint/config-conventional"
     ]
   },
-  "license": "MIT",
+  "homepage": "http://plus4nodered.com",
+  "license": "RCL",
   "bugs": {
-    "url": "https://github.com/fh1ch/node-bacstack/issues"
-  },
-  "homepage": "https://github.com/fh1ch/node-bacstack#readme",
-  "dependencies": {
-    "debug": "^4.3.1",
-    "iconv-lite": "^0.6.3"
+    "url": "https://github.com/HILA-TECH/ts-node-bacstack/issues"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",

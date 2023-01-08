@@ -1,0 +1,44 @@
+http://plus4nodered.com/licenses/source-license
+
+      License information about PLUS for Node-RED Source Deliverables
+
+        A. Introduction
+
+The PLUS for Node-RED provides source code as sample code/reference
+implementation. The source code is provided as-is, with no warranty,
+support, or misrepresentation of the quality of code.
+
+The PLUS for Node-RED provides communication stacks, sample libraries,
+sample applications and utilities. All sources are available either as a
+downloadable ZIP file or in a repository on github
+(https://github.com/BiancoRoyal/ <https://github.com/BiancoRoyal/>).
+
+        B. License models
+
+The PLUS for Node-RED provides different licenses depending on the
+component and on the membership status of the user of the sources. A
+single ZIP file or a single repository can contain multiple components
+where the sources have different license models. The valid license is in
+the header of each source file.
+
+Following are basic rules on how the PLUS for Node-RED licenses the
+different components:
+
+ 1. PLUS for Node-RED core components and utilities (libraries, cli-tools,
+    web-apps, docker-images, contribution packages) follow a dual-license model:
+      * *PLUS for Node-RED Corporate Members*: RCL (Reciprocal Community License)
+        <http://plus4nodered.com/licenses/rcl-license>
+        enables PLUS for Node-RED corporate members to deploy their
+        applications using the core component sources without being
+        required to disclose the application code.
+
+      * *Users that are not PLUS for Node-RED corporate-members*: GPLv3
+        <http://plus4nodered.com/licenses/gpl-license>
+        Based on the GPLv3 license terms these users must disclose
+        their application code when using the core component sources.
+
+ 2. Samples:
+    All samples and most of the utilities are provided under the MIT
+    license <http://plus4nodered.com/licenses/mit-license> for
+    PLUS for Node-RED Members and Non-Members.
+

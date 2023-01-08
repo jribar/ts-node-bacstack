@@ -1,12 +1,12 @@
 Node Version: `X.Y.Z`
 
-Node BACstack Version: `X.Y.Z`
+TS Node BACstack Version: `X.Y.Z`
 
 - [ ] Bug Report
 - [ ] Feature Request
 - [ ] Question
 
-**Note:** Make sure you have read the [FAQs](https://github.com/fh1ch/node-bacstack/blob/master/FAQ.md)
+**Note:** Make sure you have read the [FAQs](http://plus4nodered.com/faq/ts-backstack)
 before logging this issue.
 
 ### Feature Request / Question
