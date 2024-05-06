@@ -1,4 +1,7 @@
 'use strict';
 
-module.exports = require('./lib/client');
-module.exports.enum = require('./lib/enum');
+import {Client} from './lib/client';
+import * as Enum from './lib/enum';
+
+export {Client, Enum};
+export default Client;
